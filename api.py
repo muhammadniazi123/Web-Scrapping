@@ -62,7 +62,7 @@ def load_data(csv_file: str = 'scrapping_results.csv'):
             max_features=5000,
             stop_words='english',
             ngram_range=(1, 2),
-            min_df=2
+            min_df=1
         )
         
         tfidf_matrix = vectorizer.fit_transform(df['combined_text'])
@@ -89,7 +89,30 @@ def find_similar_articles(query: str, top_n: int = 10) -> List[Dict]:
         df_temp = df.copy()
         df_temp['similarity'] = similarities
         
-        df_temp = df_temp[df_temp['similarity'] > 0]
+        if df_temp['similarity'].max() == 0:
+            query_lower = query.lower()
+            df_temp['text_match'] = (
+                df_temp['title'].fillna('').str.lower().str.contains(query_lower, na=False, regex=False) |
+                df_temp['subtitle'].fillna('').str.lower().str.contains(query_lower, na=False, regex=False) |
+                df_temp['keywords'].fillna('').str.lower().str.contains(query_lower, na=False, regex=False) |
+                df_temp['text'].fillna('').str.lower().str.contains(query_lower, na=False, regex=False)
+            )
+            df_temp = df_temp[df_temp['text_match'] == True]
+            if len(df_temp) == 0:
+                query_words = query_lower.split()
+                for word in query_words:
+                    if len(word) > 3:
+                        df_temp = df.copy()
+                        df_temp['text_match'] = (
+                            df_temp['title'].fillna('').str.lower().str.contains(word, na=False, regex=False) |
+                            df_temp['keywords'].fillna('').str.lower().str.contains(word, na=False, regex=False)
+                        )
+                        df_temp = df_temp[df_temp['text_match'] == True]
+                        if len(df_temp) > 0:
+                            break
+            df_temp['similarity'] = 0.5
+        else:
+            df_temp = df_temp[df_temp['similarity'] > 0]
         
         df_sorted = df_temp.sort_values(
             by=['claps', 'similarity'],

@@ -22,6 +22,9 @@ topics = [
     ('Data Engineering', 'data engineering, ETL, pipelines, big data'),
     ('Machine Learning Operations', 'MLOps, model deployment, production ML'),
     ('Quantum Computing', 'quantum computing, quantum algorithms, Qiskit'),
+    ('Technology', 'technology, innovation, tech, digital transformation, IT'),
+    ('Artificial Intelligence', 'AI, artificial intelligence, machine learning, automation'),
+    ('Software Engineering', 'software engineering, coding, development, programming'),
 ]
 
 authors = [
