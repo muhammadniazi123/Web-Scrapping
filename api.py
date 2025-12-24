@@ -178,22 +178,34 @@ def index():
     })
 
 
-if __name__ == '__main__':
+def ensure_csv_exists():
     csv_file = os.environ.get('CSV_FILE', 'scrapping_results.csv')
-    
     if not os.path.exists(csv_file):
         logger.warning(f"CSV file not found: {csv_file}. Generating sample data...")
         try:
-            from generate_1000_articles import create_1000_articles_csv
-            create_1000_articles_csv(csv_file)
-            logger.info("Sample data generated successfully")
+            import sys
+            import importlib.util
+            spec = importlib.util.spec_from_file_location("generate_1000_articles", "generate_1000_articles.py")
+            if spec and spec.loader:
+                generate_module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(generate_module)
+                generate_module.create_1000_articles_csv(csv_file)
+                logger.info(f"Sample data generated: {csv_file}")
+                return True
         except Exception as e:
             logger.error(f"Failed to generate CSV: {str(e)}")
+            import traceback
+            logger.error(traceback.format_exc())
+    return os.path.exists(csv_file)
+
+if __name__ == '__main__':
+    csv_file = os.environ.get('CSV_FILE', 'scrapping_results.csv')
+    ensure_csv_exists()
     
     if load_data(csv_file):
         logger.info("API ready to serve requests")
     else:
-        logger.warning("Data not loaded. API will return errors until data is available.")
+        logger.error("Data not loaded. API will return errors until data is available.")
     
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
