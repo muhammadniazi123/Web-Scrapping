@@ -180,6 +180,16 @@ def index():
 
 if __name__ == '__main__':
     csv_file = os.environ.get('CSV_FILE', 'scrapping_results.csv')
+    
+    if not os.path.exists(csv_file):
+        logger.warning(f"CSV file not found: {csv_file}. Generating sample data...")
+        try:
+            from generate_1000_articles import create_1000_articles_csv
+            create_1000_articles_csv(csv_file)
+            logger.info("Sample data generated successfully")
+        except Exception as e:
+            logger.error(f"Failed to generate CSV: {str(e)}")
+    
     if load_data(csv_file):
         logger.info("API ready to serve requests")
     else:
