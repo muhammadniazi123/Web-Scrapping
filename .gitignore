@@ -7,7 +7,7 @@ env/
 venv/
 ENV/
 .venv
-*.csv
+# *.csv
 *.db
 *.sqlite
 .DS_Store
