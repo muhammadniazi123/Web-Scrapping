@@ -1,0 +1,542 @@
+{
+	"info": {
+		"_postman_id": "medium-search-api-collection",
+		"name": "Medium Search API",
+		"description": "Collection for testing Medium Article Search API with different topics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/health",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				},
+				"description": "Check if API is running and data is loaded"
+			},
+			"response": []
+		},
+		{
+			"name": "API Documentation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				},
+				"description": "Get API documentation"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Machine Learning",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=machine learning&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "machine learning"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for machine learning articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Data Science",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=data science&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "data science"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for data science articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Python Programming",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=python programming&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "python programming"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for Python programming articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Web Development",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=web development&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "web development"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for web development articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Deep Learning",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=deep learning&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "deep learning"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for deep learning articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Blockchain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=blockchain&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "blockchain"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for blockchain articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Cybersecurity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=cybersecurity&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "cybersecurity"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for cybersecurity articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Cloud Computing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=cloud computing&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "cloud computing"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for cloud computing articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Natural Language Processing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=natural language processing&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "natural language processing"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for NLP articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Computer Vision",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=computer vision&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "computer vision"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for computer vision articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - DevOps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=DevOps&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "DevOps"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for DevOps articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Mobile Development",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=mobile development&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "mobile development"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for mobile development articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - API Development",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=API development&top_n=10",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "API development"
+						},
+						{
+							"key": "top_n",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Search for API development articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Get All 1000 Articles (Multiple Topics)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=programming OR development OR learning OR science OR computing&top_n=1000",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "programming OR development OR learning OR science OR computing"
+						},
+						{
+							"key": "top_n",
+							"value": "1000"
+						}
+					]
+				},
+				"description": "Get all 1000 articles by searching with broad terms"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - POST Request Example",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"machine learning\",\n    \"top_n\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/search",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					]
+				},
+				"description": "Example POST request for searching"
+			},
+			"response": []
+		},
+		{
+			"name": "Search - Get All Articles (Broad Search)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/search?query=technology&top_n=1000",
+					"protocol": "http",
+					"host": [
+						"127.0.0.1"
+					],
+					"port": "5000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "technology"
+						},
+						{
+							"key": "top_n",
+							"value": "1000"
+						}
+					]
+				},
+				"description": "Get all articles using a very broad search term"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:5000",
+			"type": "string"
+		}
+	]
+}
+
